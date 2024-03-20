@@ -1,0 +1,17 @@
+<div class="max-w-xl mx-auto m-16">
+    <h1 class="font-bold text-3xl mb-4">Search by location</h1>
+    <div data-controller="geolocation">
+        <%= form_tag "" do %>
+            <div class="relative">
+                <%= text_field_tag :query, nil, class: "px-6 py-3 
+                rounded border border-gray-300/80 focus:ring-4 focus:ring-gray-200/60 focus:outline-none w-full rounded-full text-lg",
+                placeholder: 'Search city or city', data: { geolocation_target: "input" } %>
+                <button type="submit" class="absolute top-1.5 right-2 bg-gray rounded-full px-5 py-2 border border-gray-300/80 shadow-sm hover:bg-gray-500/10">Search</button>
+            </div>
+        <% end %>
+        <button style="button" data-action="geolocation#handleClick" class="underline font-semibold px-2 py-2">Find my location</button>
+    </div>
+</div>
+<div class="w-full">
+  <%= js_map [{latitude: 37.7829, longitude: -122.4190}] %>
+</div>

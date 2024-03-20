@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get 'search/index'
+  post 'search_location', to: "search_location#create"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get "up" => "rails/health#show", as: :rails_health_check
+
+  root "search#index"
 end

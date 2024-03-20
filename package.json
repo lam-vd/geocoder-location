@@ -4,9 +4,10 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.4",
-    "esbuild": "^0.20.2"
+    "esbuild": "^0.20.2",
+    "mapkick": "^0.2.6"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets"
+    "build": "esbuild app/javascript/controllers/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets"
   }
 }
